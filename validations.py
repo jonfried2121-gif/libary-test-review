@@ -17,6 +17,9 @@ def valid_pick(pick):
     valid_choises ={1,2,3,4,5,6,7,8}
     return pick in valid_choises
 
+def is_empty_string(string:str):
+    return string.strip() == ""
+
 def all_menu_validations(pick):
     try:
         pick =number_validation(pick)
@@ -29,7 +32,7 @@ def all_menu_validations(pick):
 
           
 if __name__ == "__main__":
-    valid_string("vgdyted")
+    print(empty_string("   "))
 
 
 

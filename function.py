@@ -2,7 +2,7 @@ from books import books
 from printer import print_book
 from inputs import enter_name_book,enter_author_name,enter_year,enter_book_id
 from libary_validation import get_books_by_name,already_have_book,add_new_book,get_book_by_id,borrow_by_id,is_availble,return_by_id,all_availble_books,search_book_by_author
-from validations import number_validation,bigger_than_0,valid_string
+from validations import number_validation,bigger_than_0,valid_string,is_empty_string
 
 
 def display_books():
@@ -13,6 +13,9 @@ def display_books():
 
 def search_books():
     name = enter_name_book()
+    if is_empty_string(name):
+        print("enter the books name")
+        return
     result = get_books_by_name(name)
     if not result:
         print ("we coudnt find any book according to the name")
@@ -31,15 +34,26 @@ def add_book():
         year = number_validation(year)
     except ValueError ("please enter a number year"):
         return
+    
+    if is_empty_string(name):
+        print("enter a name")
+        return
+    if is_empty_string(author):
+        print("enter an authors name")
+        return
+    
     if not bigger_than_0(year):
         print("year has to be bigger than 0")
         return
+    
     if not valid_string(author):
         print("please enter a valid authors name")
         return
+    
     if already_have_book(name,author):
         print("the book is already in the libary")
         return
+    
     add_new_book(name,author,year)
     return 
     
@@ -95,13 +109,20 @@ def get_availble_books():
 
 def get_book_by_author():
     author = enter_author_name()
+    if is_empty_string(author):
+        print("please enter an authors name")
+        return
+    
     if not valid_string(author):
         print("enetr a valid string")
         return
+    
     all_books = search_book_by_author(author)
+
     if not all_books:
         print("no books of this author")
         return
+    
     for book in books:
         print_book(book)
     return
