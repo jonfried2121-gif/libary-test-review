@@ -31,8 +31,7 @@ def all_menu_validations(pick):
     return "ok"   
 
           
-if __name__ == "__main__":
-    print(empty_string("   "))
+
 
 
 

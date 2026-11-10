@@ -1,4 +1,4 @@
-from books import books
+from data.books import books
 
 
 def get_books_by_name(name:str):

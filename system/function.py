@@ -1,8 +1,8 @@
-from books import books
-from printer import print_book
-from inputs import enter_name_book,enter_author_name,enter_year,enter_book_id
-from libary_validation import get_books_by_name,already_have_book,add_new_book,get_book_by_id,borrow_by_id,is_availble,return_by_id,all_availble_books,search_book_by_author
-from validations import number_validation,bigger_than_0,valid_string,is_empty_string
+from data.books import books
+from user.printer import print_book
+from user.inputs import enter_name_book,enter_author_name,enter_year,enter_book_id
+from validations.libary_validation import get_books_by_name,already_have_book,add_new_book,get_book_by_id,borrow_by_id,is_availble,return_by_id,all_availble_books,search_book_by_author
+from validations.validations import number_validation,bigger_than_0,valid_string,is_empty_string
 
 
 def display_books():

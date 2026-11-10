@@ -1,6 +1,6 @@
-from validations import number_validation,valid_pick,all_menu_validations
-from function import display_books,search_books,add_book,borrow_book,return_book,get_availble_books,get_book_by_author
-from inputs import enter_menu_pick
+from validations.validations import number_validation,valid_pick,all_menu_validations
+from system.function import display_books,search_books,add_book,borrow_book,return_book,get_availble_books,get_book_by_author
+from user.inputs import enter_menu_pick
 print("""================================
        LIBRARY MANAGEMENT
 ================================
